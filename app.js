@@ -232,6 +232,7 @@ function home(){
   ${dashboard()}
   <h2>All subjects</h2>
   ${subs}
+  <a class="card set" href="#/past" style="text-decoration:none;color:inherit"><div><b>Past questions</b><div class="muted">Optional sets by year and subject, unverified publisher copies</div></div><span class="btn small alt">Open</span></a>
   <a class="card set" href="#/learn" style="text-decoration:none;color:inherit"><div><b>Learn the tricks</b><div class="muted">Short lessons with methods for WAEC and JAMB</div></div><span class="btn small alt">Learn</span></a>
   ${h.length?"":`<div class="empty muted">No attempts yet. Start a set to see your scores here.</div>`}`;
   bindCountdown();
@@ -497,10 +498,49 @@ function learnLesson(slug,id){
   <a class="btn wide" href="${s.tryHash}">Try it</a>${pn}`;
 }
 
+// ---------- past questions (publisher-reported, unverified) ----------
+const PAST_NAMES={physics:"Physics",english:"English Language",biology:"Biology",chemistry:"Chemistry",economics:"Economics","literature-in-english":"Literature in English"};
+const pastBank=()=>window.PAST_BANK||[];
+let pastFilter={year:"all",subject:"all"};
+function pastBadge(){return `<span class="past-badge">Publisher-reported · not independently verified by JAMB</span>`}
+function pastChip(group,val,label,on){return `<button type="button" class="chip${on?" on":""}" data-group="${group}" data-val="${esc(val)}" aria-pressed="${on?"true":"false"}">${esc(label)}</button>`}
+function pastIndex(){
+  const bank=pastBank();
+  const years=[...new Set(bank.map(d=>String(d.year)))].sort((a,b)=>b-a);
+  const subjects=[...new Set(bank.map(d=>d.subject))];
+  const shown=bank.map((d,i)=>({d,i})).filter(({d})=>(pastFilter.year==="all"||String(d.year)===pastFilter.year)&&(pastFilter.subject==="all"||d.subject===pastFilter.subject));
+  const groups={};
+  shown.forEach(x=>{(groups[x.d.year]=groups[x.d.year]||[]).push(x)});
+  const list=Object.keys(groups).sort((a,b)=>b-a).map(y=>`<h2>${esc(y)}</h2>`+groups[y].map(({d,i})=>{const n=d.questions.length;return `<a class="card set" href="#/past/${i}" style="text-decoration:none;color:inherit"><div><b>${esc(PAST_NAMES[d.subject]||d.subject)}</b><div class="muted">${n?`${n} question${n===1?"":"s"}`:"Questions not yet available"} · JAMB ${esc(d.year)} (publisher-reported)</div></div><span class="btn small">Open</span></a>`}).join("")).join("");
+  const filters=`<div class="filters" role="group" aria-label="Filter by year">${pastChip("year","all","All years",pastFilter.year==="all")}${years.map(y=>pastChip("year",y,y,pastFilter.year===y)).join("")}</div>
+  <div class="filters" role="group" aria-label="Filter by subject">${pastChip("subject","all","All subjects",pastFilter.subject==="all")}${subjects.map(s=>pastChip("subject",s,PAST_NAMES[s]||s,pastFilter.subject===s)).join("")}</div>`;
+  app.innerHTML=`<a href="#/">&larr; Back</a><h1>Past questions</h1><p class="muted">Optional past-question sets, filter by year or subject. Answers are shown on request.</p>${pastBadge()}${filters}<div id="plist">${list||`<div class="empty muted">No past questions match these filters.</div>`}</div>`;
+  app.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{pastFilter[c.dataset.group]=c.dataset.val;pastIndex()});
+}
+function pastSet(i){
+  const d=pastBank()[i];
+  if(!d){app.innerHTML=`<a href="#/past">&larr; Past questions</a><div class="empty">Set not found.</div>`;return}
+  const qs=d.questions.length?"":`<div class="empty muted">Questions for this set are not available yet. Use the source link above to read the publisher's copy.</div>`;
+  const cards=d.questions.map((q,n)=>`<div class="card past-q" data-n="${n}"><div><b>${n+1}.</b> ${esc(q[0])}</div>${q[1].map((o,k)=>`<button class="opt" type="button" data-k="${k}"><span class="L">${L[k]}</span>${esc(o)}</button>`).join("")}<div class="past-note muted" hidden></div></div>`).join("");
+  app.innerHTML=`<a href="#/past">&larr; Past questions</a><h1>${esc(PAST_NAMES[d.subject]||d.subject)} · ${esc(d.year)}</h1>${pastBadge()}
+  <p class="muted">${esc(d.verificationNote)} <a href="${esc(d.source)}" target="_blank" rel="noopener noreferrer">Source</a></p>${qs}${cards}`;
+  app.querySelectorAll(".past-q").forEach(card=>{
+    const q=d.questions[+card.dataset.n];
+    card.querySelectorAll(".opt").forEach(btn=>btn.onclick=()=>{
+      const k=+btn.dataset.k;
+      card.querySelectorAll(".opt").forEach((b,j)=>{b.classList.toggle("correct",j===q[2]);b.classList.toggle("wrong",j===k&&k!==q[2])});
+      const note=card.querySelector(".past-note");
+      note.hidden=false;
+      note.textContent=`Publisher answer: ${L[q[2]]}. ${k===q[2]?"Your choice matches.":"Your choice differs."}`;
+    });
+  });
+}
+
 function route(){
   stopTimer();
   const hsh=location.hash||"#/";
   const parts=hsh.replace(/^#\//,"").split("/");
+  if(parts[0]==="past"){ if(parts[1]!==undefined&&parts[1]!=="")return pastSet(+parts[1]); return pastIndex() }
   if(parts[0]==="subject")return subject(parts[1]);
   if(parts[0]==="dept")return deptPage(parts[1]);
   if(parts[0]==="course")return coursePage();
