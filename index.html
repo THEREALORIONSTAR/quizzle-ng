@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quizzle NG</title>
+<script>try{if(localStorage.getItem("quizzle_theme_v1")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><a href="#/" class="brand">Quizzle NG</a><nav><a href="#/learn">Learn</a> <a href="#/history">History</a> <a href="#/account" id="acct">Log in</a> <button id="logout" class="theme-btn" type="button" hidden>Log out</button> <button id="theme" class="theme-btn" type="button" aria-pressed="false">Dark mode</button></nav></header>
+<main id="app"></main>
+<footer class="foot">Practice only. Not affiliated with WAEC or JAMB.</footer>
+<div class="credit">Created by Lord Orionstar · 09022203991</div>
+<script src="data/english.js"></script>
+<script src="data/maths.js"></script>
+<script src="data/biology.js"></script>
+<script src="data/government.js"></script>
+<script src="data/physics.js"></script>
+<script src="data/chemistry.js"></script>
+<script src="data/economics.js"></script>
+<script src="data/literature.js"></script>
+<script src="data/crs.js"></script>
+<script src="data/commerce.js"></script>
+<script src="data/lessons.js"></script>
+<script src="app.js"></script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCX990NPa6jO-uV2AuSOUKsgUs0kdT7Cvo",
+  authDomain: "quizzle-ng.firebaseapp.com",
+  projectId: "quizzle-ng",
+  storageBucket: "quizzle-ng.firebasestorage.app",
+  messagingSenderId: "659131757507",
+  appId: "1:659131757507:web:80f60f8af41888ccb7c376",
+  measurementId: "G-QNVJKY2YQR"
+};
+const fbApp = initializeApp(firebaseConfig);
+const auth = getAuth(fbApp);
+
+// Progress is kept per account: on login/logout the progress keys are swapped
+// in localStorage for that account's saved copy (guest progress is kept separately).
+const PROG = ["quizzle_history_v1","quizzle_inprogress_v1","quizzle_exam_date_v1","quizzle_mock_run_v1","quizzle_streak_v1","quizzle_seen_v1"];
+const BK = "quizzle_accounts_v1", OWN = "quizzle_owner_v1";
+function readBuckets(){try{return JSON.parse(localStorage.getItem(BK))||{}}catch(e){return {}}}
+function snapshot(){const o={};PROG.forEach(k=>{const v=localStorage.getItem(k);if(v!==null)o[k]=v});return o}
+function swapTo(uid){
+  const cur=localStorage.getItem(OWN)||"guest";
+  if(cur===uid)return false;
+  const b=readBuckets();
+  b[cur]=snapshot();
+  PROG.forEach(k=>localStorage.removeItem(k));
+  const nxt=b[uid]||{};
+  PROG.forEach(k=>{if(nxt[k]!=null)localStorage.setItem(k,nxt[k])});
+  try{localStorage.setItem(BK,JSON.stringify(b));localStorage.setItem(OWN,uid)}catch(e){}
+  return true;
+}
+const esc=(s)=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+let currentUser=null;
+function paintHeader(){
+  const a=document.getElementById("acct"), lo=document.getElementById("logout");
+  if(!a||!lo)return;
+  if(currentUser){
+    const name=(currentUser.email||"").split("@")[0];
+    a.textContent="Signed in: "+name; a.href="#/account"; lo.hidden=false;
+  } else {
+    a.textContent="Log in"; a.href="#/account"; lo.hidden=true;
+  }
+}
+document.getElementById("logout").onclick=async()=>{try{await signOut(auth)}catch(e){}};
+
+// Maps a typed email or phone number to the email Firebase Auth needs.
+function toEmail(raw){
+  const v=String(raw||"").trim();
+  if(v.includes("@"))return v.toLowerCase();
+  const digits=v.replace(/[\s\-()]/g,"");
+  if(/^\+?\d{10,15}$/.test(digits))return digits.replace(/^\+/,"")+"@phone.quizzle-ng.app";
+  return null;
+}
+const ERRS={
+  "auth/weak-password":"Password must be at least 6 characters (Firebase minimum).",
+  "auth/email-already-in-use":"That email or phone already has an account. Log in instead.",
+  "auth/invalid-email":"That email or phone number is not valid.",
+  "auth/invalid-credential":"wrong password (or no account with that email/phone).",
+  "auth/invalid-login-credentials":"wrong password (or no account with that email/phone).",
+  "auth/wrong-password":"wrong password.",
+  "auth/user-not-found":"wrong password (or no account with that email/phone).",
+  "auth/too-many-requests":"Too many attempts. Wait a few minutes and try again.",
+  "auth/network-request-failed":"Network error. Check your connection and try again."
+};
+function errText(e){
+  const c=e&&e.code||"";
+  if(ERRS[c])return ERRS[c];
+  return "Error ("+c+"): "+(e&&e.message||"unknown")+(c==="auth/operation-not-allowed"||c==="auth/unauthorized-domain"||c==="auth/configuration-not-found"?" Enable Email/Password sign-in in the Firebase console and add this domain to Authorized domains.":"");
+}
+
+function renderAccount(){
+  const app=document.getElementById("app");
+  if(currentUser){
+    app.innerHTML=`<h1>Your account</h1>
+    <div class="card"><b>Signed in as</b><div class="muted">${esc(currentUser.email||"")}</div>
+    <p class="muted">Your progress (history, streak, exam countdown, unfinished quizzes) is saved to this account on this device.</p>
+    <button id="logout2" class="btn danger" type="button">Log out</button></div>
+    <p class="muted"><a href="#/">Back to subjects</a></p>`;
+    document.getElementById("logout2").onclick=async()=>{try{await signOut(auth)}catch(e){}};
+    return;
+  }
+  app.innerHTML=`<h1>Log in or sign up</h1>
+  <p class="muted">Optional. You can keep practising as a guest. Logging in keeps your progress on your account.</p>
+  <div class="card">
+    <label><b>Email or phone number</b></label>
+    <input id="au-id" class="cinput" type="text" autocomplete="username" placeholder="you@example.com or 08012345678" style="margin:6px 0 12px">
+    <label><b>Password</b> <span class="muted">(at least 6 characters)</span></label>
+    <input id="au-pw" class="cinput" type="password" autocomplete="current-password" style="margin:6px 0 12px">
+    <div class="row" style="gap:8px"><button id="au-login" class="btn" type="button">Log in</button><button id="au-signup" class="btn alt" type="button">Sign up</button></div>
+    <div id="au-msg" class="muted" style="margin-top:12px" role="alert"></div>
+  </div>`;
+  const msg=(t,bad)=>{const m=document.getElementById("au-msg");m.textContent=t;m.style.color=bad?"var(--bad,#c0392b)":""};
+  const run=async(signup)=>{
+    const id=document.getElementById("au-id").value, pw=document.getElementById("au-pw").value;
+    const email=toEmail(id);
+    if(!email)return msg("Enter a valid email address or phone number.",true);
+    if(pw.length<6)return msg("Password must be at least 6 characters.",true);
+    msg(signup?"Creating account...":"Logging in...");
+    try{
+      if(signup)await createUserWithEmailAndPassword(auth,email,pw);
+      else await signInWithEmailAndPassword(auth,email,pw);
+      msg("");
+    }catch(e){ msg(errText(e),true) }
+  };
+  document.getElementById("au-login").onclick=()=>run(false);
+  document.getElementById("au-signup").onclick=()=>run(true);
+}
+window.renderAccount=renderAccount;
+
+onAuthStateChanged(auth,(user)=>{
+  currentUser=user||null;
+  swapTo(user?user.uid:"guest");
+  paintHeader();
+  if(location.hash.startsWith("#/account")&&!user)renderAccount();
+  else if(location.hash.startsWith("#/account"))renderAccount();
+  window.dispatchEvent(new HashChangeEvent("hashchange"));
+});
+</script>
+</body>
+</html>

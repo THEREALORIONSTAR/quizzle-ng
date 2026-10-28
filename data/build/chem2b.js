@@ -1,0 +1,86 @@
+window.CHEM_NEW = window.CHEM_NEW || [];
+window.CHEM_NEW.push({name:"Set 15: Chemical Equilibrium and Le Chatelier",qs:[
+["For the reaction N2 + 3H2 <=> 2NH3 (exothermic), raising the temperature shifts equilibrium to the:",["right","left","no shift","stops"],1,"Heat favours the endothermic direction, which is the reverse reaction."],
+["Increasing pressure on N2 + 3H2 <=> 2NH3 shifts equilibrium to the side with:",["more gas molecules","fewer gas molecules","more water","no gas"],1,"Pressure favours the side with fewer gas molecules: 2NH3."],
+["A catalyst in an equilibrium reaction:",["changes the equilibrium position","speeds up both forward and reverse reactions equally","stops the reaction","makes the reaction endothermic"],1,"A catalyst only helps the system reach equilibrium faster."],
+["Equilibrium in a closed system is reached when:",["forward and reverse rates are equal","the reaction stops","all reactants disappear","the temperature falls to zero"],0,"Concentrations stay constant because both rates match."],
+["Le Chatelier's principle states that a system at equilibrium will:",["oppose any change applied to it","always move right","never change","always move left"],0,"The system adjusts to partly counteract the change."],
+["Adding more reactant to an equilibrium mixture shifts the equilibrium to the:",["right","left","stops","no change in direction"],0,"Extra reactant is used up, so products increase."],
+["The Haber process is used to make:",["ammonia","sulphuric acid","nitric acid","sodium hydroxide"],0,"N2 and H2 are combined to make NH3 under high pressure."],
+["Which condition is used in the Contact process to increase SO2 conversion?",["high pressure","low temperature only","vanadium(V) oxide catalyst","no catalyst"],2,"Vanadium(V) oxide speeds up the reaction without being used up."],
+["In the Haber process, the iron catalyst is used to:",["speed up attainment of equilibrium","make the yield 100%","lower the pressure","absorb ammonia"],0,"Catalysts do not change the equilibrium yield, only the speed."],
+["A reversible reaction is shown by:",["the sign","the double arrow","a single arrow","a question mark"],1,"Double arrows show both directions occur."],
+["The equilibrium constant for an exothermic reaction decreases when:",["temperature rises","temperature falls","a catalyst is added","pressure is removed only"],0,"Rising temperature shifts the equilibrium toward reactants."],
+["Dissolving ammonium chloride in water is:",["endothermic","exothermic","neutral","non-reversible"],0,"The solution gets colder, so energy is absorbed."],
+["Which change shifts 2SO2 + O2 <=> 2SO3 (exothermic) to the right, giving more SO3?",["raising the temperature","adding more SO3 to the mixture","removing SO3 as it forms","adding a noble gas at constant volume"],2,"Removing a product pulls the equilibrium to the right, so more SO3 forms. Raising temperature favours the left (endothermic) direction, and adding product shifts it left."],
+["Hydrogen and iodine react to form HI. Increasing volume (lowering pressure) causes:",["no change in position","shift toward more HI","shift toward H2 and I2","complete reaction"],0,"Equal moles of gas on each side means pressure does not shift equilibrium."],
+["An equilibrium position is described as favouring products when:",["K is large","K is small","K is zero","K is negative"],0,"A large equilibrium constant means many products form."]
+]});
+window.CHEM_NEW.push({name:"Set 16: Energetics and Enthalpy Change",qs:[
+["A reaction that gives out heat to the surroundings is:",["exothermic","endothermic","isothermic","neutral"],0,"Exothermic reactions release energy, so the temperature rises."],
+["The enthalpy change of an exothermic reaction is:",["positive","negative","zero","infinite"],1,"Energy is released, so delta H is negative."],
+["Melting ice absorbs heat, so the process is:",["endothermic","exothermic","neutral","reversible only"],0,"Energy is taken in from the surroundings."],
+["Bond breaking is always:",["endothermic","exothermic","zero energy","reversible"],0,"Energy must be supplied to break bonds."],
+["Bond making is always:",["exothermic","endothermic","zero energy","impossible"],0,"Energy is released when new bonds form."],
+["The standard unit of enthalpy change is:",["kJ/mol","mol/kJ","kg","K"],0,"Enthalpy change is quoted in kilojoules per mole."],
+["Burning fuel is an example of a/an:",["exothermic reaction","endothermic reaction","decomposition","precipitation"],0,"Combustion releases heat energy."],
+["The reaction between sodium and water is:",["exothermic","endothermic","isothermic","non-spontaneous"],0,"The reaction gives out heat and hydrogen."],
+["Photosynthesis is an example of an:",["endothermic reaction","exothermic reaction","neutralisation","combustion"],0,"Plants absorb light energy to build glucose."],
+["Hess's law states that the total enthalpy change depends only on:",["initial and final states","the route taken","the catalyst used","the volume"],0,"Enthalpy is a state function."],
+["The heat of combustion of a fuel is measured in:",["kJ/mol","mol/L","g/cm3","atm"],0,"Combustion heat is enthalpy per mole of fuel burnt."],
+["In an endothermic reaction, the products have:",["more energy than reactants","less energy than reactants","equal energy","no energy"],0,"Energy is absorbed, so products sit higher on the energy profile."],
+["The heat of neutralisation is usually about:",["-57 kJ/mol","+57 kJ/mol","-500 kJ/mol","0 kJ/mol"],0,"Strong acid and strong base neutralisation releases about 57 kJ per mole of water."],
+["Which of these is an endothermic process?",["neutralisation","respiration","thermal decomposition of CaCO3","combustion of alcohol"],2,"Heating calcium carbonate needs continuous heat input."],
+["A bond energy is the energy needed to:",["break one mole of a bond","form one mole of a bond only","melt the substance","heat the solution"],0,"Bond energy is measured for breaking bonds."]
+]});
+window.CHEM_NEW.push({name:"Set 17: Rates of Reaction",qs:[
+["Which factor does NOT increase the rate of a reaction?",["higher temperature","larger surface area","higher concentration","lower pressure for a gas reaction"],3,"Lower pressure reduces collisions between gas particles."],
+["A catalyst increases reaction rate by:",["lowering the activation energy","increasing the activation energy","using up reactants","changing the products"],0,"It provides an alternative pathway with lower activation energy."],
+["Powdered marble reacts faster with acid than a lump of marble because:",["it has a larger surface area","it is more concentrated","it is more reactive chemically","it is hotter"],0,"More surface is exposed for collisions."],
+["Measuring the volume of gas collected per minute is used to find:",["rate of reaction","atomic mass","equilibrium constant","pH"],0,"Faster gas production means a faster rate."],
+["The rate of a reaction is the change in amount of product per:",["unit time","unit mass","unit volume only","mole only"],0,"Rate = change in quantity divided by time."],
+["Increasing temperature speeds up reactions mainly by:",["increasing the number of successful collisions","reducing activation energy","increasing mass","decreasing volume"],0,"More particles have energy above activation energy."],
+["Which gas is produced when zinc reacts with dilute hydrochloric acid?",["hydrogen","oxygen","chlorine","carbon dioxide"],0,"Zn + 2HCl gives ZnCl2 and H2."],
+["In the decomposition of hydrogen peroxide, the catalyst used is:",["manganese(IV) oxide","iron","copper sulphate","sodium chloride"],0,"MnO2 speeds up the breakdown of H2O2 into oxygen."],
+["The effect of concentration on rate is explained by:",["more particles per unit volume giving more collisions","particles becoming heavier","particles becoming bigger","colour change"],0,"Higher concentration means more frequent collisions."],
+["The activation energy is:",["the minimum energy needed for a reaction to occur","the energy released in combustion","the energy of a catalyst","the energy of the products"],0,"Colliding particles need at least this energy to react."],
+["A reaction that is fastest at the start and slows down over time is typical of:",["reaction rate decreasing as reactants are used up","constant rate always","zero rate","increasing rate always"],0,"Concentration of reactant falls, so collisions become less frequent."],
+["Enzymes are biological:",["catalysts","reactants","products","inhibitors only"],0,"Enzymes speed up reactions in living things."],
+["The effect of light on the rate of photochemical reactions is shown by:",["silver chloride decomposing in sunlight","water boiling","rust forming slowly","ice melting"],0,"Light provides energy to break bonds in silver chloride."],
+["If temperature rises by 10 C, the rate of many reactions roughly:",["doubles","halves","stays the same","becomes zero"],0,"A rough rule: rate doubles for each 10 degrees rise."],
+["Adding a catalyst to a reaction at equilibrium:",["speeds up the time to reach equilibrium","changes the final yield","stops the reaction","makes it endothermic"],0,"The equilibrium position is not changed by catalysts."]
+]});
+window.CHEM_NEW.push({name:"Set 18: Redox Reactions and Oxidation Numbers",qs:[
+["Oxidation is the:",["gain of electrons","loss of electrons","gain of oxygen only","loss of hydrogen only"],1,"OIL RIG: oxidation is loss of electrons."],
+["Reduction is the:",["loss of electrons","gain of electrons","loss of oxygen only","gain of protons"],1,"Reduction is gain of electrons (RIG)."],
+["The oxidation number of hydrogen in H2O is:",["+1","-1","0","+2"],0,"Hydrogen is +1 when bonded to non-metals."],
+["The oxidation number of oxygen in most compounds is:",["-2","+2","-1","0"],0,"Oxygen usually has an oxidation state of -2."],
+["In MnO4- the oxidation state of manganese is:",["+7","+4","+2","+5"],0,"Total charge -1 = Mn + 4(-2), so Mn = +7."],
+["Which substance is a reducing agent in Fe2+ + Ag+ gives Fe3+ + Ag?",["Fe2+","Ag+","Fe3+","Ag"],0,"Fe2+ loses electrons, so it is oxidised and acts as a reducing agent."],
+["Displacement of copper from copper sulphate by zinc is a:",["redox reaction","neutralisation","precipitation only","hydrolysis"],0,"Zinc is oxidised and copper ions are reduced."],
+["The oxidation number of sulphur in SO2 is:",["+4","+6","-2","0"],0,"S + 2(-2) = 0 gives S = +4."],
+["Oxidising agents:",["gain electrons and are reduced","lose electrons and are oxidised","do nothing in reactions","are always metals"],0,"Oxidising agents are reduced in the reaction."],
+["The oxidation number of an element in its free state is:",["0","+1","-1","+2"],0,"Free elements have zero oxidation number."],
+["Which is an oxidising agent?",["acidified potassium manganate(VII)","zinc","hydrogen","carbon monoxide"],0,"Potassium manganate(VII) gains electrons and is reduced."],
+["In the reaction Cl2 + 2Br- gives 2Cl- + Br2, the chlorine is:",["reduced","oxidised","neutral","a catalyst"],0,"Cl goes from 0 to -1, which is gain of electrons."],
+["The oxidation state of carbon in CO2 is:",["+4","+2","0","-4"],0,"C + 2(-2) = 0 gives C = +4."],
+["Which of these is a reducing agent?",["sulphur dioxide","hydrogen sulphide","hydrogen peroxide only","potassium manganate(VII)"],1,"H2S can donate electrons, so it is a reducing agent."],
+["A half-equation shows:",["the oxidation or reduction part of a reaction","only the product","only the catalyst","the temperature"],0,"It shows electron transfer for one half of a redox reaction."]
+]});
+window.CHEM_NEW.push({name:"Set 19: Electrolysis",qs:[
+["Electrolysis is the process of:",["decomposing a compound using electricity","making electricity from chemicals","melting ice","distilling water"],0,"Electric current breaks down an electrolyte."],
+["An electrolyte is a substance that:",["conducts electricity when molten or dissolved","is always a metal","is a gas at room temperature","is insoluble in water"],0,"Ions carry the charge when the compound is molten or in solution."],
+["At the cathode, positive ions are:",["reduced","oxidised","neutral","destroyed"],0,"Cations gain electrons at the cathode."],
+["At the anode, negative ions are:",["oxidised","reduced","neutral only","catalysts"],0,"Anions lose electrons at the anode."],
+["During electrolysis of molten lead(II) bromide, lead forms at:",["the cathode","the anode","both electrodes","the solution"],0,"Pb2+ ions gain electrons at the cathode."],
+["Electrolysis of concentrated brine (NaCl solution) produces chlorine at the:",["anode","cathode","both electrodes","neither"],0,"Chloride ions lose electrons at the anode."],
+["The product at the cathode during electrolysis of concentrated brine is:",["hydrogen","chlorine","sodium","oxygen"],0,"Hydrogen is less reactive than sodium, so water is reduced."],
+["Electroplating is used to:",["coat an object with a metal","purify water","make salt","produce acid"],0,"A thin layer of metal is deposited on an article."],
+["In electroplating, the article to be plated is made the:",["cathode","anode","electrolyte","catalyst"],0,"Metal ions are reduced onto the object at the cathode."],
+["Copper refining uses electrolysis with:",["impure copper as anode","pure copper as anode","pure copper as cathode only","no electrodes"],0,"Impure copper dissolves at the anode and pure copper deposits at the cathode."],
+["Faraday's first law states that the mass of substance deposited depends on:",["quantity of electricity passed","the colour of the solution","the temperature only","the volume of the cell"],0,"More charge means more substance is deposited."],
+["Which metal is extracted by electrolysis of its molten oxide?",["aluminium","iron","copper","zinc only"],0,"Aluminium is too reactive for carbon reduction, so electrolysis is used."],
+["Cryolite is added in aluminium extraction to:",["lower the melting point of alumina","increase the price","form aluminium oxide","absorb oxygen"],0,"It lowers the melting temperature and saves energy."],
+["Carbon anodes in aluminium extraction are burnt away by:",["oxygen released at the anode","hydrogen released at the cathode","sodium","chlorine only"],0,"Oxygen reacts with the carbon anodes to form CO2."],
+["Which solution gives oxygen at the anode during electrolysis?",["dilute sulphuric acid","concentrated brine","molten NaCl","copper(II) chloride"],0,"Water is oxidised, releasing oxygen when sulphate ions are not discharged."]
+]});

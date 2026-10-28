@@ -1,0 +1,103 @@
+window.GOV_NEW = window.GOV_NEW || [];
+window.GOV_NEW.push({name:"Set 3: Colonial Constitutions and Independence",qs:[
+["Lord Lugard amalgamated the Northern and Southern protectorates of Nigeria in:",["1900","1914","1922","1960"],1,"The amalgamation was in 1914 under Lord Lugard."],
+["The Clifford Constitution of 1922 introduced:",["limited elective representation in Lagos and Calabar","a federal system","independence","military rule"],0,"It provided limited elective representation, mainly in Lagos and Calabar."],
+["The Richards Constitution of 1946 is important because it introduced:",["regional houses and a central legislature","a republic","the 1999 constitution","military government"],0,"It set up regional houses of assembly and a central legislative council."],
+["Nigeria gained independence from Britain on:",["1 October 1960","1 January 1963","29 May 1999","12 June 1993"],0,"Nigeria became independent on 1 October 1960."],
+["Nigeria became a republic in:",["1960","1963","1979","1999"],1,"Nigeria became a republic on 1 October 1963."],
+["The first Prime Minister of independent Nigeria was:",["Nnamdi Azikiwe","Abubakar Tafawa Balewa","Obafemi Awolowo","Ahmadu Bello"],1,"Tafawa Balewa led the government from 1960 until 1966."],
+["Nnamdi Azikiwe became Nigeria's first indigenous Governor-General in 1960 and later the first President in:",["1963","1960","1966","1979"],0,"Azikiwe was Governor-General from 1960, then became President when the republic was declared in 1963."],
+["The Macpherson Constitution of 1951 introduced:",["a federal structure with regional governments","a military junta","a unitary state","an Ombudsman"],0,"It strengthened regional government and ushered in a federal structure."],
+["The Lyttleton Constitution of 1954 led to:",["a federal Nigeria","a unitary Nigeria","a republican Nigeria","the end of colonial rule"],0,"It established a federal constitution for Nigeria."],
+["Which colonial power ruled Nigeria?",["France","Portugal","Britain","Germany"],2,"Nigeria was a British colony."],
+["Nigeria's independence constitution was enacted by the:",["British Parliament","Nigerian Army","Nigerian Senate alone","United Nations"],0,"The Nigeria Independence Act of 1960 was passed by the British Parliament."],
+["Nigeria joined the United Nations in:",["1945","1960","1963","1975"],1,"Nigeria became a UN member in 1960 upon independence."],
+["The Nigerian civil war (1967 to 1970) involved the secession of:",["Biafra","Lagos","Kano","Sokoto"],0,"The Eastern Region declared itself the Republic of Biafra."],
+["Nigeria's first military coup took place in:",["1960","1966","1979","1993"],1,"The coup of January 1966 ended the First Republic."],
+["The Richards Constitution was introduced by:",["Sir Arthur Richards","Lord Lugard","Obafemi Awolowo","Nnamdi Azikiwe"],0,"It was named after Governor Arthur Richards."]
+]});
+window.GOV_NEW.push({name:"Set 4: Military Rule and Constitutional Development",qs:[
+["The Second Republic began in:",["1960","1963","1979","1999"],2,"Nigeria returned to civilian rule in 1979 under the 1979 Constitution."],
+["The 1979 Constitution was modelled largely on the:",["British system","American presidential system","Soviet system","Chinese system"],1,"The 1979 constitution adopted an American-style presidential system."],
+["The Third Republic was aborted when General Ibrahim Babangida annulled the:",["1993 presidential election","1979 election","1959 election","1999 election"],0,"The June 12, 1993 election was annulled."],
+["The military head of state who handed over power in 1999 was:",["Yakubu Gowon","Abdulsalami Abubakar","Sani Abacha","Ibrahim Babangida"],1,"Abdulsalami Abubakar handed over to a civilian government in 1999."],
+["The current Nigerian constitution came into force in:",["1960","1979","1999","2015"],2,"The 1999 Constitution became effective on 29 May 1999."],
+["Democracy Day in Nigeria is celebrated on:",["1 October","12 June","29 May","1 January"],2,"29 May marks the return to democracy in 1999."],
+["June 12 is celebrated in Nigeria as:",["Democracy Day","Independence Day","Children's Day","Workers' Day"],0,"Since 2018, June 12 is Democracy Day."],
+["Which general overthrew Muhammadu Buhari in the August 1985 coup?",["Ibrahim Babangida","Yakubu Gowon","Sani Abacha","Murtala Mohammed"],0,"Ibrahim Babangida led the August 1985 coup that removed Buhari."],
+["Who was the head of state during the Nigerian civil war?",["Yakubu Gowon","Murtala Mohammed","Ibrahim Babangida","Sani Abacha"],0,"Gowon led the federal government from 1966 to 1975."],
+["Murtala Mohammed's government was in power from:",["1975 to 1976","1960 to 1966","1979 to 1983","1993 to 1998"],0,"He came to power by coup in 1975 and was assassinated in 1976."],
+["The military government that handed power to Shehu Shagari in 1979 was headed by:",["Olusegun Obasanjo","Yakubu Gowon","Muhammadu Buhari","Sani Abacha"],0,"Obasanjo oversaw the transition to civilian rule in 1979."],
+["The Constitution of 1989 was part of the transition programme of:",["Ibrahim Babangida","Olusegun Obasanjo","Abdulsalami Abubakar","Murtala Mohammed"],0,"Babangida's transition programme produced a 1989 constitution."],
+["The Nigerian Constitution is the:",["supreme law of the land","ordinary law","regional law only","customary law"],0,"Any law inconsistent with it is void (section 1)."],
+["Which Nigerian constitution is the longest lasting so far?",["1960","1979","1999","1963"],2,"It is still in force after more than two decades."],
+["Nigeria practises which system of government?",["federal presidential","unitary parliamentary","confederal monarchy","military dictatorship"],0,"Nigeria is a federal state with a presidential system."]
+]});
+window.GOV_NEW.push({name:"Set 5: Federalism and Levels of Government",qs:[
+["Nigeria operates a system of government that is:",["federal","unitary","confederal","feudal"],0,"Power is shared between federal, state and local governments."],
+["Nigeria has how many states?",["30","36","37","40"],1,"There are 36 states, plus the Federal Capital Territory."],
+["The Federal Capital Territory is located in:",["Lagos","Abuja","Kaduna","Enugu"],1,"Abuja is the capital and seat of the FCT."],
+["The capital of Nigeria is:",["Lagos","Abuja","Port Harcourt","Kano"],1,"Abuja became the capital in 1991."],
+["How many local government areas are recognised in the constitution?",["576","693","774","850"],2,"Nigeria has 774 local government areas across its 36 states and FCT."],
+["Federalism means:",["division of power between central and regional governments","all power at the centre","power held by a monarch","power held by the army"],0,"Power is shared constitutionally between levels of government."],
+["A unitary system differs from federalism because in a unitary system:",["power is concentrated at the centre","power is shared equally with states","states are sovereign","local government is absent"],0,"Regional units are subordinate to the central government."],
+["The legislative list in the constitution applies to:",["exclusive matters for the federal government","local government only","state police only","the judiciary only"],0,"The Exclusive Legislative List gives powers only to the federation."],
+["The Concurrent Legislative List covers matters on which:",["both federal and state governments can legislate","only states can legislate","only local governments can legislate","no one can legislate"],0,"Both levels can make laws on these subjects, but federal law prevails in conflict."],
+["The residual list covers matters that are:",["left to the states","left to the judiciary","left to the military","left to foreign powers"],0,"Matters not listed on the federal or concurrent list fall to the states."],
+["Which Nigerian city is the commercial capital?",["Abuja","Lagos","Kano","Ibadan"],1,"Lagos is the commercial nerve centre of Nigeria."],
+["The 1999 Constitution gives the states:",["their own constitution-making power only partly","complete sovereignty","no legislative power","a separate army"],0,"States have limited powers defined by the constitution."],
+["Nigeria's federal character principle is found in:",["section 14(3)","section 1","section 42","section 131"],0,"Section 14(3) requires fair representation of all states and groups."],
+["The principle of federal character aims at:",["fair distribution of posts and resources","increasing taxes","ending elections","creating a single language"],0,"It ensures no state or group dominates."],
+["The number of geopolitical zones recognised in Nigeria is:",["four","five","six","eight"],2,"Nigeria has six geopolitical zones."]
+]});
+window.GOV_NEW.push({name:"Set 6: Arms of Government and Separation of Powers",qs:[
+["The three arms of government in Nigeria are:",["executive, legislature and judiciary","police, army and navy","federal, state and local","president, senate and court"],0,"These are the three organs of government."],
+["The principle of separation of powers was propounded by:",["Montesquieu","Karl Marx","Lenin","Plato"],0,"Montesquieu wrote about separation of powers in The Spirit of Laws."],
+["The arm of government that makes laws is:",["legislature","executive","judiciary","police"],0,"The legislature makes laws."],
+["The arm that enforces laws is the:",["executive","judiciary","legislature","electoral commission"],0,"The executive implements and enforces laws."],
+["The arm that interprets laws is the:",["judiciary","legislature","executive","military"],0,"Courts interpret the constitution and laws."],
+["Checks and balances means:",["each arm checks the powers of the others","one arm controls all others","arms work in isolation","the military checks everyone"],0,"Each arm limits the others to prevent abuse of power."],
+["Nigeria's federal legislature is called the:",["National Assembly","Federal Council","State Assembly","Supreme Council"],0,"It consists of the Senate and the House of Representatives."],
+["The head of the federal executive is the:",["President","Chief Justice","Speaker","Governor"],0,"The President is head of the federal executive."],
+["The head of the judiciary in Nigeria is the:",["Chief Justice of Nigeria","Attorney-General","Chief Imam","Senate President"],0,"The CJN heads the judiciary."],
+["The Attorney-General of the Federation is the:",["chief law officer of the federation","head of police","head of INEC","head of NPC"],0,"The AGF is the chief law officer and minister of justice."],
+["Judicial independence means that:",["courts are free from interference by the executive and legislature","judges are appointed by the military","judges take orders from the president","courts are controlled by the police"],0,"Independent judges decide cases impartially."],
+["Which arm of government usually approves the budget?",["legislature","judiciary","police","electoral commission"],0,"The legislature appropriates funds."],
+["Ministers in Nigeria are chosen by the:",["President","Chief Justice","Speaker","INEC"],0,"The President appoints ministers, subject to Senate confirmation."],
+["The Senate confirms appointments made by the:",["President","Governor","Speaker","Chief Judge"],0,"Senate confirmation is needed for some top appointments."],
+["A parliamentary system differs from a presidential system in that:",["the executive is drawn from the legislature","the executive is elected separately","there is no legislature","the head of state has no powers"],0,"In parliamentary systems, the executive comes from parliament."]
+]});
+window.GOV_NEW.push({name:"Set 7: The Presidency and Executive Powers",qs:[
+["The minimum age for a presidential candidate in Nigeria is:",["30","35","40","45"],2,"Section 131 sets the minimum age at 40."],
+["A President of Nigeria serves a term of:",["four years","five years","six years","seven years"],0,"The term is four years."],
+["The maximum number of terms a President may serve is:",["one","two","three","unlimited"],1,"Section 137 limits the President to two terms."],
+["To win a presidential election, a candidate must obtain:",["a majority of votes cast and at least 25% in two-thirds of states","a simple plurality only","a unanimous vote","a 50% vote in one state"],0,"The 25% in two-thirds of states rule is in section 134."],
+["Which of these is the correct minimum share of votes needed in two-thirds of states to win the presidency under the 1999 Constitution?",["25 percent","10 percent","50 percent","75 percent"],0,"A winner needs at least 25 percent of votes in at least two-thirds of the 36 states and the FCT (24 states)."],
+["The Vice President of Nigeria is:",["elected alongside the President","appointed by the Senate","chosen by the judiciary","appointed by the military"],0,"The Vice President runs on the same ticket."],
+["The Commander-in-Chief of the Armed Forces is the:",["President","Chief of Army Staff","Inspector-General of Police","Chief Justice"],0,"The President is the Commander-in-Chief."],
+["The Federal Executive Council is made up of:",["the President, Vice President and ministers","the Senate only","the judges","the governors"],0,"FEC is the executive council of the federation."],
+["The President may be removed by:",["impeachment","a vote of the public","a court order by a district judge","a military order only"],0,"Impeachment is provided for in the constitution."],
+["The power to make executive decisions in Nigeria belongs to the:",["President","Speaker","Chief Justice","Senate President"],0,"Executive power is vested in the President (section 5)."],
+["A President who is incapacitated may be replaced by the:",["Vice President","Chief Justice","Senate President","Governor"],0,"The Vice President acts as President in such situations."],
+["The oath of office of the President is taken before the:",["Chief Justice of Nigeria","Speaker","Governor","Inspector-General"],0,"The CJN administers the oath."],
+["Which official heads the executive in a state?",["the Governor","the Senate President","the Speaker","the Chief Judge"],0,"Each state has a governor as chief executive."],
+["The minimum age for a governor in Nigeria is:",["30","35","40","45"],1,"Section 177 sets 35 years for governors."],
+["The term of a state governor is:",["four years","five years","six years","three years"],0,"Governors serve four-year terms and may serve two terms."]
+]});
+window.GOV_NEW.push({name:"Set 8: The National Assembly",qs:[
+["The Senate has how many members?",["36","109","360","774"],1,"The Senate has 109 members."],
+["The House of Representatives has how many members?",["109","180","360","469"],2,"The House has 360 members."],
+["Each state has how many senators?",["1","2","3","6"],2,"Each state has three senators, one per senatorial district."],
+["Each senatorial district elects:",["one senator","three senators","two senators","five senators"],0,"Each district elects one senator."],
+["The FCT has how many senators?",["1","2","3","6"],0,"The FCT is represented by one senator."],
+["The minimum age to contest for the Senate is:",["25","30","35","40"],2,"Section 65 sets the Senate minimum age at 35."],
+["The minimum age to contest for the House of Representatives is:",["25","30","35","40"],1,"Section 65 sets the House minimum age at 30."],
+["The presiding officer of the Senate is the:",["Senate President","Speaker","Chief Justice","President"],0,"The Senate President presides over the Senate."],
+["The presiding officer of the House of Representatives is the:",["Speaker","Senate President","Deputy Chief Justice","Governor"],0,"The Speaker presides over the House."],
+["The National Assembly consists of the:",["Senate and House of Representatives","Senate and Supreme Court","House and Federal High Court","President and Vice President"],0,"Both chambers form the legislature."],
+["Making laws for Nigeria is the duty of the:",["National Assembly","Federal Executive Council","Supreme Court","INEC"],0,"Section 4 vests legislative power in the National Assembly."],
+["A bill becomes law after it is:",["passed by both chambers and assented to by the President","passed by the Senate alone","approved by the judiciary","approved by the police"],0,"Both houses must pass it and the President must sign it."],
+["If the President vetoes a bill, the National Assembly can override the veto with:",["two-thirds majority of members of each chamber","a simple majority in the Senate only","a unanimous vote","the court's approval"],0,"A two-thirds vote in each house overrides the veto."],
+["The National Assembly is said to be bicameral because it has:",["two chambers","two parties","two heads","two capitals"],0,"Bicameral means two chambers."],
+["Nigeria's legislature has a term of:",["four years","five years","six years","three years"],0,"Members serve four-year terms."]
+]});

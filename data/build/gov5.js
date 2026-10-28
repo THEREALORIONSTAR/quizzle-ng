@@ -1,0 +1,55 @@
+window.GOV_NEW = window.GOV_NEW || [];
+window.GOV_NEW.push({name:"Set 13: The Judiciary and the Courts",qs:[
+["The highest court in Nigeria is the:",["Supreme Court","Court of Appeal","Federal High Court","Sharia Court of Appeal"],0,"Section 230 establishes the Supreme Court as the apex court."],
+["The Chief Justice of Nigeria is appointed by:",["the President, subject to Senate confirmation","the National Judicial Council only","the Senate President","the Vice President"],0,"The President appoints the CJN after Senate confirmation."],
+["The Court of Appeal hears appeals from:",["the High Courts and other lower courts","the Supreme Court","the National Assembly","the Electoral Commission"],0,"The Court of Appeal is the intermediate appellate court."],
+["The Federal High Court deals mainly with:",["matters involving federal laws and agencies","state marriage disputes","local council budgets","village land disputes"],0,"The Federal High Court handles federal causes such as revenue and federal agencies."],
+["The State High Court hears:",["matters under state law","federal army cases only","presidential petitions","only criminal cases in Lagos"],0,"State High Courts handle matters under state law."],
+["Judges of the Supreme Court retire at age:",["70","65","60","75"],0,"Judicial officers in Nigeria retire at 70 for Supreme Court justices."],
+["The National Judicial Council (NJC) is responsible for:",["discipline and appointment of judges","building roads","running elections","collecting taxes"],0,"The NJC handles judicial discipline and recommends judicial appointments."],
+["Judicial independence means:",["courts are free from interference by the executive and legislature","judges can be ordered by the President","courts act for the army","judges are elected by party members"],0,"Judicial independence protects the impartiality of the courts."],
+["Customary courts deal mainly with:",["customary law matters at local level","federal taxation","national elections","military discipline"],0,"Customary courts apply customary law in local disputes."],
+["Sharia Courts of Appeal are found in:",["states that have adopted Sharia law","the Federal Capital Territory only","every local government","the National Assembly building"],0,"Sharia courts operate in states that have adopted Sharia by constitutional provision."],
+["The principle that a court's earlier decision guides future decisions is called:",["stare decisis","habeas corpus","mandamus","sub judice"],0,"Stare decisis is the doctrine of precedent."],
+["Habeas corpus is a writ used to:",["secure the release of a person unlawfully detained","order a public auction","transfer a judge","register a company"],0,"Habeas corpus requires the detainer to produce the detained person before court."],
+["The power of judicial review means:",["courts can declare laws unconstitutional","courts make laws for the legislature","courts appoint the Attorney-General","courts run elections"],0,"Judicial review allows courts to strike down unconstitutional laws."],
+["The Attorney-General of the Federation is also the:",["Minister of Justice","Chief Judge","Clerk of the National Assembly","Head of Police"],0,"The AGF is also the Minister of Justice."],
+["The Supreme Court's original jurisdiction covers disputes between:",["the Federation and a State or between States","two private individuals","a family and a village","two local councils only"],0,"Original jurisdiction covers federal-state disputes under section 232."],
+["A magistrate court is:",["a lower court handling minor cases","the highest court","a legislative body","a military court"],0,"Magistrate courts deal with minor criminal and civil cases."]
+]});
+window.GOV_NEW.push({name:"Set 14: Local Government and the Federal Capital Territory",qs:[
+["Local government in Nigeria is headed by a:",["Chairman","Governor","Mayor","Speaker"],0,"Each local government area has an elected Chairman."],
+["The Federal Capital Territory (FCT) is administered by:",["a Minister appointed by the President","the Governor of Lagos","the Speaker of the House","the Chief Justice"],0,"The FCT is administered by a Minister appointed by the President."],
+["The capital was officially moved from Lagos to Abuja in:",["1991","1960","1976","1999"],0,"The FCT was created in 1976, and the seat of government moved to Abuja in December 1991."],
+["Local governments in Nigeria are established by the:",["State House of Assembly","National Assembly","Supreme Court","Police Council"],0,"Under section 7, state laws create and regulate local governments."],
+["The Local Government Council in Nigeria is responsible for:",["primary education and primary health care","the national army","the Federal Electoral Act","the national budget"],0,"Section 7 and the Fourth Schedule give local government duties like primary education and health."],
+["The concept of a Local Government Area (LGA) in Nigeria means:",["a unit of local government under a state","a federal court","a national electoral district","a military zone"],0,"LGAs are the third tier of government."],
+["Nigeria has three tiers of government, namely:",["federal, state and local","federal, regional and village","national, district and city","central, provincial and communal"],0,"Nigeria's government is federal, state and local."],
+["The local government chairman is elected by:",["the people of the local government area","the state governor alone","the Senate","the Federal Executive Council"],0,"Local government chairmen are elected by the residents of each LGA."],
+["Council of traditional rulers is an advisory body to:",["the State Governor on traditional matters","the Federal Supreme Court","INEC","the military"],0,"Traditional rulers advise governments on cultural and customary matters."],
+["The Fourth Schedule of the 1999 Constitution deals with:",["functions of local government councils","the list of states","the Federal Supreme Court","the electoral timetable"],0,"The Fourth Schedule lists the functions of local government councils."],
+["A Local Government Council that is independent of the state government is called:",["autonomous local government","local military zone","state assembly","federal district"],0,"Autonomy of local government is a major demand in federal debates."],
+["The Area Council in the FCT is the equivalent of a:",["Local Government Area","State Assembly","Federal Ministry","State High Court"],0,"FCT has area councils that function like LGAs."],
+["Which of the following is a function of a state government?",["maintaining state roads and state police","printing the national currency","conducting the census","administering the national army"],0,"States maintain state roads and sometimes their own security forces."],
+["The number of Area Councils in the FCT is:",["6","36","774","12"],0,"The FCT has six area councils."],
+["Local government administration is headed by a Chairman while state administration is headed by:",["a Governor","a Speaker","a Mayor","a President"],0,"States are headed by an elected Governor."],
+["The third tier of government in Nigeria is:",["local government","state government","the Presidency","the judiciary"],0,"The three tiers are federal, state and local government."]
+]});
+window.GOV_NEW.push({name:"Set 15: The Federal Structure and Revenue Allocation",qs:[
+["The body that recommends the sharing of revenue among tiers of government is the:",["Revenue Mobilisation Allocation and Fiscal Commission","Federal Inland Revenue Service","Central Bank of Nigeria","Nigeria Customs Service"],0,"RMAFC recommends revenue allocation under the Constitution."],
+["The Federation Account is:",["the pool where revenue collected by the federation is held","a savings account for civil servants","a loan from the IMF","a company owned by the state"],0,"Revenue from federal sources goes into the Federation Account."],
+["Derivation principle in revenue sharing means:",["states get a share based on the revenue from their area","all states get equal shares only","the federal government keeps everything","revenue is given to the military"],0,"Derivation favours the oil-producing states in revenue sharing."],
+["The Exclusive Legislative List in the 1999 Constitution is found in:",["the Second Schedule","the First Schedule","the Fourth Schedule","the Sixth Schedule"],0,"The Second Schedule contains the exclusive legislative list."],
+["The Concurrent Legislative List is found in:",["the Fourth Schedule","the Second Schedule","the Fifth Schedule","the Seventh Schedule"],0,"Item in the Concurrent list can be legislated on by both the federal and state governments."],
+["Residual matters are matters that are:",["not listed in either the Exclusive or Concurrent List","listed in the Exclusive List","found only in the Fifth Schedule","in the Constitution's preamble"],0,"Residual powers belong to the states under section 4."],
+["Nigeria's federal system is best described as:",["a federation with three tiers of government","a unitary system","a confederation","a monarchy"],0,"Nigeria has a federal system with three tiers."],
+["The Federal Government's fiscal powers include:",["taxing national matters and borrowing","running local markets","appointing village heads","printing school books"],0,"The federal government has power over national taxation and borrowing."],
+["The Federal Character Principle aims to:",["ensure fair representation of the states in national institutions","stop all elections","appoint only one ethnic group to offices","eliminate local government"],0,"Section 14 promotes fair representation of the federation's diverse people."],
+["Section 14 of the 1999 Constitution deals with:",["the Federal Character Principle","the right to life","freedom of movement","the National Anthem"],0,"Section 14 contains the Federal Character Principle."],
+["The Federal Character Commission was established to:",["promote the Federal Character Principle","conduct census","run the national army","collect customs duties"],0,"The Commission monitors fair spread in federal appointments."],
+["The Nigerian federation has how many states?",["36","24","33","12"],0,"Nigeria has 36 states and the FCT."],
+["Revenue sharing in Nigeria is based partly on:",["population and equality of states","religion of states","height of state capitals","size of universities"],0,"Population, equality and derivation are common revenue sharing factors."],
+["The Federal Government's key revenue source is:",["oil and gas revenue","tourism","local farm produce","fishing licences"],0,"Oil and gas is the largest source of federal revenue."],
+["The Fifth Schedule of the 1999 Constitution deals with:",["the Independent National Electoral Commission","the list of local government areas","the National Assembly rules","the Federal Executive Council"],0,"The Fifth Schedule sets out INEC's functions."],
+["The 1999 Constitution provides that the Federation shall consist of:",["states and the Federal Capital Territory","provinces and regions","counties and parishes","districts and wards"],0,"Section 2 says Nigeria shall be a federation of 36 states and the FCT."]
+]});
