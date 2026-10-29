@@ -28,10 +28,9 @@
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
-import { getFirestore, doc, runTransaction, onSnapshot } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCX990NPa6jO-uV2AuSOUKsgUs0kdT7Cvo",
+  apiKey: "AIzaSy...7Cvo",
   authDomain: "quizzle-ng.firebaseapp.com",
   projectId: "quizzle-ng",
   storageBucket: "quizzle-ng.firebasestorage.app",
@@ -41,28 +40,35 @@ const firebaseConfig = {
 };
 const fbApp = initializeApp(firebaseConfig);
 const auth = getAuth(fbApp);
-const db = getFirestore(fbApp);
-const visitRef = doc(db, "siteStats", "visitors");
-let visitCount = null;
-let visitCountError = null;
-function paintVisitorCount(){
+
+// Public, no-key hit counter. Count once per browser session; hide the stat if unavailable.
+const visitorKey = "quizzle_ng_therealorionstar_public_visitor_total_20261029";
+const visitorBase = "https://countapi.mileshilliard.com/api/v1";
+const visitorSessionKey = "quizzle_counterapi_counted_v1";
+window.quizzleVisitorCount = null;
+window.quizzlePaintVisitorCount = function(count){
+  const n=Number(count);
+  if(!Number.isFinite(n)||n<0)return;
+  window.quizzleVisitorCount=n;
+  const card=document.querySelector(".visitor-stat");
   const el=document.getElementById("visitor-count");
-  if(el)el.textContent=visitCount===null?"—":visitCount.toLocaleString();
-}
-window.quizzlePaintVisitorCount=paintVisitorCount;
-const visitSessionKey="quizzle_visit_counted_v1";
-try{
-  if(!sessionStorage.getItem(visitSessionKey)){
-    sessionStorage.setItem(visitSessionKey,"1");
-    runTransaction(db,async tx=>{
-      const snap=await tx.get(visitRef);
-      const count=snap.exists()?Number(snap.data().count)||0:0;
-      tx.set(visitRef,{count:count+1,updatedAt:new Date().toISOString()});
-      return count+1;
-    }).then(count=>{visitCount=count;paintVisitorCount()}).catch(error=>{visitCountError=error;console.error("Quizzle visitor counter Firebase error:",error)});
+  if(card&&el){el.textContent=n.toLocaleString();card.hidden=false;card.style.display="";}
+};
+(async()=>{
+  try{
+    const counted=sessionStorage.getItem(visitorSessionKey)==="1";
+    if(!counted)sessionStorage.setItem(visitorSessionKey,"1");
+    const action=counted?"get":"hit";
+    const response=await fetch(`${visitorBase}/${action}/${visitorKey}`,{cache:"no-store",signal:AbortSignal.timeout(7000)});
+    if(!response.ok)throw new Error("counter unavailable");
+    const data=await response.json();
+    if(!Number.isFinite(Number(data.value)))throw new Error("invalid counter response");
+    window.quizzlePaintVisitorCount(data.value);
+  }catch(_){
+    const card=document.querySelector(".visitor-stat");
+    if(card)card.hidden=true;
   }
-  onSnapshot(visitRef,snap=>{visitCount=snap.exists()?Number(snap.data().count)||0:0;paintVisitorCount()},error=>{visitCountError=error;console.error("Quizzle visitor count listener Firebase error:",error)});
-}catch(error){visitCountError=error;console.error("Quizzle visitor counter setup error:",error)}
+})();
 
 // Progress is kept per account: on login/logout the progress keys are swapped
 // in localStorage for that account's saved copy (guest progress is kept separately).
