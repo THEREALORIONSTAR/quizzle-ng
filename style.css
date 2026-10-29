@@ -11,8 +11,7 @@ h1{font-size:1.5rem;margin:8px 0}
 h2{font-size:1.15rem;margin:14px 0 8px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.stat{text-align:center}
-.stat b{display:block;font-size:1.4rem;color:var(--accent)}
+.exam-tabs{display:flex;gap:8px;margin:10px 0}.visitor-stat{display:flex;align-items:baseline;justify-content:center;gap:6px;padding:10px}.visitor-stat b{font-size:1.15rem;color:var(--accent)}
 .btn{display:inline-block;border:0;border-radius:12px;padding:14px 18px;font-size:1rem;font-weight:600;background:var(--accent);color:#fff;cursor:pointer;text-decoration:none;text-align:center;min-height:48px}
 .btn:hover{background:var(--accent2)}
 .btn.alt{background:#fff;color:var(--accent);border:2px solid var(--accent)}

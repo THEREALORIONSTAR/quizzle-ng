@@ -1,5 +1,10 @@
 (function(){
 const KEY_HIST="quizzle_history_v1", KEY_RUN="quizzle_inprogress_v1", KEY_EXAM="quizzle_exam_date_v1", KEY_MOCK="quizzle_mock_run_v1";
+const KEY_EXAM_TYPE="quizzle_exam_type_v1";
+function selectedExam(){return localStorage.getItem(KEY_EXAM_TYPE)==="WAEC"?"WAEC":"JAMB"}
+function chooseExam(exam){localStorage.setItem(KEY_EXAM_TYPE,exam==="WAEC"?"WAEC":"JAMB")}
+function examPicker(){return `<div class="card"><b>Choose your exam</b><div class="exam-tabs" role="group" aria-label="Choose exam">${["JAMB","WAEC"].map(x=>`<button class="chip${selectedExam()===x?" on":""}" type="button" data-exam="${x}" aria-pressed="${selectedExam()===x}">${x}</button>`).join("")}</div><div class="muted">Showing ${selectedExam()} prep</div></div>`}
+function bindExamPicker(){document.querySelectorAll("[data-exam]").forEach(b=>b.onclick=()=>{chooseExam(b.dataset.exam);if(location.hash.startsWith("#/past"))pastIndex();else home()})}
 const DEPTS={
   science:{name:"Science",subjects:["maths","english","physics","chemistry","biology"]},
   arts:{name:"Arts",subjects:["english","literature","government","crs","economics"]},
@@ -216,9 +221,11 @@ function home(){
   const h=load(KEY_HIST,[]);
   const subs=SUBJECTS.map(s=>{const b=getBank(s);const n=b?b.sets.length:0;return `<a class="card set" href="#/subject/${s}" style="text-decoration:none;color:inherit"><div><b>${esc(b?b.name:s)}</b><div class="muted">${n} set${n===1?"":"s"}</div></div><span class="btn small">Open</span></a>`}).join("");
   app.innerHTML=`<h1>Practice for WAEC and JAMB</h1>
+  ${examPicker()}
   <p class="muted">Pick a subject. Practice mode shows answers straight away. Timed mode tests you under a clock.</p>
   ${streakCard()}
   ${countdownCard()}
+  <div class="visitor-stat card"><b id="visitor-count">Loading</b><span class="muted"> total visits</span></div>
   <div class="row" style="margin:10px 0">
     <a class="btn small" href="#/mock">Mock exam (4 subjects)</a>
     <a class="btn small alt" href="#/course">Course combo finder</a>
@@ -236,6 +243,8 @@ function home(){
   <a class="card set" href="#/learn" style="text-decoration:none;color:inherit"><div><b>Learn the tricks</b><div class="muted">Short lessons with methods for WAEC and JAMB</div></div><span class="btn small alt">Learn</span></a>
   ${h.length?"":`<div class="empty muted">No attempts yet. Start a set to see your scores here.</div>`}`;
   bindCountdown();
+  bindExamPicker();
+  if(window.quizzlePaintVisitorCount)window.quizzlePaintVisitorCount();
 }
 
 function subject(sub){
@@ -500,29 +509,33 @@ function learnLesson(slug,id){
 
 // ---------- past questions (publisher-reported, unverified) ----------
 const PAST_NAMES={physics:"Physics",english:"English Language",biology:"Biology",chemistry:"Chemistry",economics:"Economics",maths:"Mathematics",government:"Government","literature-in-english":"Literature in English"};
-const pastBank=()=>window.PAST_BANK||[];
+const pastBank=()=> (window.PAST_BANK||[]).map(d=>({...d,exam:d.exam||"JAMB"}));
 let pastFilter={year:"all",subject:"all"};
 function pastBadge(){return `<span class="past-badge">Publisher-reported · not independently verified by JAMB</span>`}
 function pastChip(group,val,label,on){return `<button type="button" class="chip${on?" on":""}" data-group="${group}" data-val="${esc(val)}" aria-pressed="${on?"true":"false"}">${esc(label)}</button>`}
 function pastIndex(){
   const bank=pastBank();
-  const years=[...new Set(bank.map(d=>String(d.year)))].sort((a,b)=>b-a);
-  const subjects=[...new Set(bank.map(d=>d.subject))];
-  const shown=bank.map((d,i)=>({d,i})).filter(({d})=>(pastFilter.year==="all"||String(d.year)===pastFilter.year)&&(pastFilter.subject==="all"||d.subject===pastFilter.subject));
+  const exam=selectedExam();
+  const examBank=bank.filter(d=>(d.exam||"JAMB")==exam);
+  const years=[...new Set(examBank.map(d=>String(d.year)))].sort((a,b)=>b-a);
+  const subjects=[...new Set(examBank.map(d=>d.subject))];
+  const shown=examBank.map(d=>({d,i:bank.indexOf(d)})).filter(({d})=>(pastFilter.year==="all"||String(d.year)===pastFilter.year)&&(pastFilter.subject==="all"||d.subject===pastFilter.subject));
   const groups={};
   shown.forEach(x=>{(groups[x.d.year]=groups[x.d.year]||[]).push(x)});
-  const list=Object.keys(groups).sort((a,b)=>b-a).map(y=>`<h2>${esc(y)}</h2>`+groups[y].map(({d,i})=>{const n=d.questions.length;return `<a class="card set" href="#/past/${i}" style="text-decoration:none;color:inherit"><div><b>${esc(PAST_NAMES[d.subject]||d.subject)}</b><div class="muted">${n?`${n} question${n===1?"":"s"}`:"Questions not yet available"} · JAMB ${esc(d.year)} (publisher-reported)</div></div><span class="btn small">Open</span></a>`}).join("")).join("");
+  const list=Object.keys(groups).sort((a,b)=>b-a).map(y=>`<h2>${esc(y)}</h2>`+groups[y].map(({d,i})=>{const n=d.questions.length;return `<a class="card set" href="#/past/${i}" style="text-decoration:none;color:inherit"><div><b>${esc(PAST_NAMES[d.subject]||d.subject)}</b><div class="muted">${n?`${n} question${n===1?"":"s"}`:"Questions not yet available"} · ${d.exam||"JAMB"} ${esc(d.year)} (publisher-reported)</div></div><span class="btn small">Open</span></a>`}).join("")).join("");
   const filters=`<div class="filters" role="group" aria-label="Filter by year">${pastChip("year","all","All years",pastFilter.year==="all")}${years.map(y=>pastChip("year",y,y,pastFilter.year===y)).join("")}</div>
   <div class="filters" role="group" aria-label="Filter by subject">${pastChip("subject","all","All subjects",pastFilter.subject==="all")}${subjects.map(s=>pastChip("subject",s,PAST_NAMES[s]||s,pastFilter.subject===s)).join("")}</div>`;
-  app.innerHTML=`<a href="#/">&larr; Back</a><h1>Past questions</h1><p class="muted">Optional past-question sets, filter by year or subject. Answers are shown on request.</p>${pastBadge()}${filters}<div id="plist">${list||`<div class="empty muted">No past questions match these filters.</div>`}</div>`;
-  app.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{pastFilter[c.dataset.group]=c.dataset.val;pastIndex()});
+  const empty=exam==="WAEC"?`<div class="empty muted">WAEC questions coming</div>`:`<div class="empty muted">No past questions match these filters.</div>`;
+  app.innerHTML=`<a href="#/">&larr; Back</a><h1>Past questions</h1>${examPicker()}<p class="muted">${exam} past-question sets, organized by subject and year. Answers are shown on request.</p>${exam==="JAMB"?pastBadge():""}${filters}<div id="plist">${list||empty}</div>`;
+  bindExamPicker();
+  app.querySelectorAll(".chip:not([data-exam])").forEach(c=>c.onclick=()=>{pastFilter[c.dataset.group]=c.dataset.val;pastIndex()});
 }
 function pastSet(i){
   const d=pastBank()[i];
   if(!d){app.innerHTML=`<a href="#/past">&larr; Past questions</a><div class="empty">Set not found.</div>`;return}
   const qs=d.questions.length?"":`<div class="empty muted">Questions for this set are not available yet. Use the source link above to read the publisher's copy.</div>`;
   const cards=d.questions.map((q,n)=>`<div class="card past-q" data-n="${n}"><div><b>${n+1}.</b> ${esc(q[0])}</div>${q[1].map((o,k)=>`<button class="opt" type="button" data-k="${k}"><span class="L">${L[k]}</span>${esc(o)}</button>`).join("")}<div class="past-note muted" hidden></div></div>`).join("");
-  app.innerHTML=`<a href="#/past">&larr; Past questions</a><h1>${esc(PAST_NAMES[d.subject]||d.subject)} · ${esc(d.year)}</h1>${pastBadge()}
+  app.innerHTML=`<a href="#/past">&larr; Past questions</a><h1>${esc(PAST_NAMES[d.subject]||d.subject)} · ${esc(d.year)}</h1>${d.exam==="WAEC"?"":pastBadge()}
   <p class="muted">${esc(d.verificationNote)} <a href="${esc(d.source)}" target="_blank" rel="noopener noreferrer">Source</a></p>${qs}${cards}`;
   app.querySelectorAll(".past-q").forEach(card=>{
     const q=d.questions[+card.dataset.n];
