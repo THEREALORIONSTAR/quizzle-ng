@@ -499,7 +499,7 @@ function learnLesson(slug,id){
 }
 
 // ---------- past questions (publisher-reported, unverified) ----------
-const PAST_NAMES={physics:"Physics",english:"English Language",biology:"Biology",chemistry:"Chemistry",economics:"Economics","literature-in-english":"Literature in English"};
+const PAST_NAMES={physics:"Physics",english:"English Language",biology:"Biology",chemistry:"Chemistry",economics:"Economics",maths:"Mathematics",government:"Government","literature-in-english":"Literature in English"};
 const pastBank=()=>window.PAST_BANK||[];
 let pastFilter={year:"all",subject:"all"};
 function pastBadge(){return `<span class="past-badge">Publisher-reported · not independently verified by JAMB</span>`}
