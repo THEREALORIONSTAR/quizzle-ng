@@ -47,7 +47,7 @@ const visitorBase = "https://countapi.mileshilliard.com/api/v1";
 const visitorSessionKey = "quizzle_counterapi_counted_v1";
 window.quizzleVisitorCount = null;
 window.quizzlePaintVisitorCount = function(count){
-  const n=Number(count);
+  const n=Number(count==null?window.quizzleVisitorCount:count);
   if(!Number.isFinite(n)||n<0)return;
   window.quizzleVisitorCount=n;
   const card=document.querySelector(".visitor-stat");
@@ -57,12 +57,12 @@ window.quizzlePaintVisitorCount = function(count){
 (async()=>{
   try{
     const counted=sessionStorage.getItem(visitorSessionKey)==="1";
-    if(!counted)sessionStorage.setItem(visitorSessionKey,"1");
     const action=counted?"get":"hit";
     const response=await fetch(`${visitorBase}/${action}/${visitorKey}`,{cache:"no-store",signal:AbortSignal.timeout(7000)});
     if(!response.ok)throw new Error("counter unavailable");
     const data=await response.json();
     if(!Number.isFinite(Number(data.value)))throw new Error("invalid counter response");
+    if(!counted)sessionStorage.setItem(visitorSessionKey,"1");
     window.quizzlePaintVisitorCount(data.value);
   }catch(_){
     const card=document.querySelector(".visitor-stat");
